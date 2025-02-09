@@ -2,7 +2,9 @@
 
 A responsive React banner component with smooth page-turning animations and autoplay functionality. Built with pure React and CSS transforms, this component provides an engaging way to showcase content with a book-like interface.
 
-![FlipbookBanner Demo](demo.gif)
+## [Live Demo](https://hgromov.github.io/flipbook-banner)
+
+[<img src="docs/assets/preview.gif" width="600" alt="FlipbookBanner Demo">](https://hgromov.github.io/flipbook-banner)
 
 ## Features
 
@@ -19,17 +21,7 @@ A responsive React banner component with smooth page-turning animations and auto
 ## Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/hgromov/flipbook-banner.git
-
-# Navigate to project directory
-cd flipbook-banner
-
-# Install dependencies
-npm install
-
-# Start development server
-npm start
+npm install flipbook-banner
 ```
 
 ## Usage
@@ -78,7 +70,7 @@ The component accepts the following props:
 ```jsx
 <FlipbookBanner
   pages={pages}
-  animationDuration={600}
+  animationDuration={100}
   animationEasing="ease-in-out"
 />
 ```
@@ -108,6 +100,18 @@ The component accepts the following props:
 ## Development
 
 ```bash
+# Clone the repository
+git clone https://github.com/hgromov/flipbook-banner.git
+
+# Navigate to project directory
+cd flipbook-banner
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
 # Run tests
 npm test
 

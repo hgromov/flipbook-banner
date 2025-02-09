@@ -5,7 +5,7 @@ import { useKeyboardControls } from "./hooks/useKeyboardControls";
 import Page from "./components/Page";
 import Controls from "./components/Controls";
 import Thumbnails from "./components/Thumbnails";
-import "./FlipbookBanner.css";
+import "./flipbookBanner.css";
 
 /**
  * FlipbookBanner Component

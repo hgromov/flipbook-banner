@@ -1,5 +1,5 @@
 import React from "react";
-import FlipbookBanner from "./FlipbookBanner/FlipbookBanner";
+import { FlipbookBanner } from "./FlipbookBanner";
 import "./app.css";
 
 const pages = [

@@ -80,12 +80,6 @@ The component accepts the following props:
 - **Right Arrow**: Next page
 - **Space**: Toggle autoplay
 
-### Touch Controls
-
-- **Swipe Left**: Next page
-- **Swipe Right**: Previous page
-- **Tap Indicators**: Jump to page
-
 ### Accessibility
 
 - Full keyboard navigation

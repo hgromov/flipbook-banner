@@ -112,4 +112,4 @@ npm run build
 
 ## License
 
-MIT © [Your Name]
+MIT © Herman Ostapenko

@@ -6,6 +6,8 @@
 }
 
 .flipbook-container {
+  --flip-duration: 0.8s;
+  --flip-easing: cubic-bezier(0.3, 0.06, 0.2, 1);
   width: 970px;
   height: 250px;
   min-width: 300px;
@@ -36,7 +38,7 @@
   height: 100%;
   transform-origin: left center;
   transform-style: preserve-3d;
-  transition: all 0.8s cubic-bezier(0.3, 0.06, 0.2, 1);
+  transition: all var(--flip-duration) var(--flip-easing);
   background: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   will-change: transform, opacity;

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useFlipAnimation } from "./hooks/useFlipAnimation";
 import { usePageTransform } from "./hooks/usePageTransform";
 import { useKeyboardControls } from "./hooks/useKeyboardControls";
@@ -25,8 +25,23 @@ import "./FlipbookBanner.css";
  *
  * return <FlipbookBanner pages={pages} />;
  */
-const FlipbookBanner = ({ pages }) => {
+const FlipbookBanner = ({
+  pages,
+  animationDuration = 800,
+  animationEasing = "cubic-bezier(0.3, 0.06, 0.2, 1)",
+}) => {
   const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+      container.style.setProperty(
+        "--flip-duration",
+        `${animationDuration / 1000}s`
+      );
+      container.style.setProperty("--flip-easing", animationEasing);
+    }
+  }, [animationDuration, animationEasing]);
 
   // Custom hooks for managing state and animations
   const {
@@ -59,14 +74,10 @@ const FlipbookBanner = ({ pages }) => {
       className="flipbook-container"
       role="region"
       aria-label="Image slideshow"
+      ref={containerRef}
     >
       <div className="book">
-        <div
-          className="pages-container"
-          ref={containerRef}
-          aria-live="polite"
-          aria-atomic="true"
-        >
+        <div className="pages-container" aria-live="polite" aria-atomic="true">
           {pages.map((page, index) => (
             <Page
               key={index}

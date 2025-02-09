@@ -57,11 +57,12 @@ function App() {
 
 The component accepts the following props:
 
-| Prop                | Type     | Default  | Description                                    |
-| ------------------- | -------- | -------- | ---------------------------------------------- |
-| `pages`             | `Array`  | Required | Array of page objects with `image` and `title` |
-| `autoplayInterval`  | `number` | `2000`   | Time between page turns (ms)                   |
-| `animationDuration` | `number` | `800`    | Page flip animation duration (ms)              |
+| Prop                | Type     | Default                           | Description                        |
+| ------------------- | -------- | --------------------------------- | ---------------------------------- |
+| `pages`             | `Array`  | Required                          | Array of page objects              |
+| `autoplayInterval`  | `number` | `2000`                            | Time between page turns (ms)       |
+| `animationDuration` | `number` | `800`                             | Page flip animation duration (ms)  |
+| `animationEasing`   | `string` | `cubic-bezier(0.3, 0.06, 0.2, 1)` | CSS easing function for animations |
 
 ### Page Object Structure
 
@@ -70,6 +71,16 @@ The component accepts the following props:
   image: string,  // URL to page image
   title: string   // Page title text
 }
+```
+
+### Example with Custom Animation
+
+```jsx
+<FlipbookBanner
+  pages={pages}
+  animationDuration={600}
+  animationEasing="ease-in-out"
+/>
 ```
 
 ## Features in Detail

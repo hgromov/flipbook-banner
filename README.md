@@ -4,8 +4,6 @@ A responsive React banner component with smooth page-turning animations and auto
 
 ## [Live Demo](https://hgromov.github.io/flipbook-banner)
 
-[<img src="docs/assets/preview.gif" width="600" alt="FlipbookBanner Demo">](https://hgromov.github.io/flipbook-banner)
-
 ## Features
 
 - 🎯 Smooth page-turning animations
@@ -17,12 +15,6 @@ A responsive React banner component with smooth page-turning animations and auto
 - ♿ Full accessibility support (ARIA)
 - 🔄 Visual progress indicators
 - 🎨 Customizable styling
-
-## Installation
-
-```bash
-npm install flipbook-banner
-```
 
 ## Usage
 

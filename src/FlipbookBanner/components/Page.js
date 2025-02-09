@@ -1,5 +1,6 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { usePageTurnSound } from "../hooks/usePageTurnSound";
 
 /**
  * Individual page component for the flipbook
@@ -25,29 +26,41 @@ const Page = ({
   visibility,
   current,
   total,
-}) => (
-  <div
-    className={`page ${index === selected ? "selected" : ""} ${
-      index < selected ? "left" : "right"
-    }`}
-    style={{
-      transform,
-      zIndex,
-      opacity: visibility ? 1 : 0,
-      pointerEvents: visibility ? "auto" : "none",
-    }}
-    role="tabpanel"
-    aria-hidden={!visibility}
-    aria-label={`Page ${index + 1} of ${total}`}
-  >
-    <div className="page-front">
-      <img src={page.image} alt={page.title} />
-      <h2 id={`page-title-${index}`}>{page.title}</h2>
+}) => {
+  const previousSelectedRef = useRef(selected);
+  const playPageTurnSound = usePageTurnSound();
+
+  useEffect(() => {
+    if (selected !== previousSelectedRef.current && visibility) {
+      playPageTurnSound();
+      previousSelectedRef.current = selected;
+    }
+  }, [selected, visibility, playPageTurnSound]);
+
+  return (
+    <div
+      className={`page ${index === selected ? "selected" : ""} ${
+        index < selected ? "left" : "right"
+      }`}
+      style={{
+        transform,
+        zIndex,
+        opacity: visibility ? 1 : 0,
+        pointerEvents: visibility ? "auto" : "none",
+      }}
+      role="tabpanel"
+      aria-hidden={!visibility}
+      aria-label={`Page ${index + 1} of ${total}`}
+    >
+      <div className="page-front">
+        <img src={page.image} alt={page.title} />
+        <h2 id={`page-title-${index}`}>{page.title}</h2>
+      </div>
+      <div className="page-back" aria-hidden="true" />
+      <div className="page-side" aria-hidden="true" />
     </div>
-    <div className="page-back" aria-hidden="true" />
-    <div className="page-side" aria-hidden="true" />
-  </div>
-);
+  );
+};
 
 Page.propTypes = {
   page: PropTypes.shape({
@@ -60,6 +73,8 @@ Page.propTypes = {
   zIndex: PropTypes.number.isRequired,
   visibility: PropTypes.bool.isRequired,
   prevPage: PropTypes.object,
+  current: PropTypes.bool.isRequired,
+  total: PropTypes.number.isRequired,
 };
 
 export default memo(Page);

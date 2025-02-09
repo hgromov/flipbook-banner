@@ -7,12 +7,14 @@ A responsive React banner component with smooth page-turning animations and auto
 ## Features
 
 - 🎯 Smooth page-turning animations
-- 🎬 Autoplay functionality
-- ⌨️ Keyboard navigation support
-- 📱 Responsive design
-- 🖱️ Interactive controls
-- ♿ Accessibility support
-- 🔄 Progress indicators
+- 🎬 Autoplay with configurable timing
+- 🎵 Page turn sound effects
+- ⌨️ Keyboard navigation support (Arrow keys + Space)
+- 📱 Responsive design with touch support
+- 🖱️ Interactive controls with visual feedback
+- ♿ Full accessibility support (ARIA)
+- 🔄 Visual progress indicators
+- 🎨 Customizable styling
 
 ## Installation
 
@@ -29,3 +31,85 @@ npm install
 # Start development server
 npm start
 ```
+
+## Usage
+
+```jsx
+import FlipbookBanner from "./FlipbookBanner";
+
+const pages = [
+  {
+    image: "/assets/image1.jpg",
+    title: "Page Title 1",
+  },
+  {
+    image: "/assets/image2.jpg",
+    title: "Page Title 2",
+  },
+];
+
+function App() {
+  return <FlipbookBanner pages={pages} />;
+}
+```
+
+## Configuration
+
+The component accepts the following props:
+
+| Prop                | Type     | Default  | Description                                    |
+| ------------------- | -------- | -------- | ---------------------------------------------- |
+| `pages`             | `Array`  | Required | Array of page objects with `image` and `title` |
+| `autoplayInterval`  | `number` | `2000`   | Time between page turns (ms)                   |
+| `animationDuration` | `number` | `800`    | Page flip animation duration (ms)              |
+
+### Page Object Structure
+
+```js
+{
+  image: string,  // URL to page image
+  title: string   // Page title text
+}
+```
+
+## Features in Detail
+
+### Keyboard Controls
+
+- **Left Arrow**: Previous page
+- **Right Arrow**: Next page
+- **Space**: Toggle autoplay
+
+### Touch Controls
+
+- **Swipe Left**: Next page
+- **Swipe Right**: Previous page
+- **Tap Indicators**: Jump to page
+
+### Accessibility
+
+- Full keyboard navigation
+- ARIA labels and roles
+- Screen reader support
+- Focus management
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Development
+
+```bash
+# Run tests
+npm test
+
+# Build for production
+npm run build
+```
+
+## License
+
+MIT © [Your Name]

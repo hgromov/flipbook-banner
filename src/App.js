@@ -4,19 +4,19 @@ import "./app.css";
 
 const pages = [
   {
-    image: "/assets/lemons.jpg",
+    image: `${process.env.PUBLIC_URL}/assets/lemons.jpg`,
     title: "Fresh Lemons",
   },
   {
-    image: "/assets/avocados.jpg",
+    image: `${process.env.PUBLIC_URL}/assets/avocados.jpg`,
     title: "Ripe Avocados",
   },
   {
-    image: "/assets/nuddles.jpg",
+    image: `${process.env.PUBLIC_URL}/assets/nuddles.jpg`,
     title: "Delicious Noodles",
   },
   {
-    image: "/assets/nuts.jpg",
+    image: `${process.env.PUBLIC_URL}/assets/nuts.jpg`,
     title: "Mixed Nuts",
   },
 ];

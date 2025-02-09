@@ -39,7 +39,11 @@ const Controls = ({
         disabled={selected === 0 || isAnimating || isPlaying}
         aria-label="Previous page"
       >
-        <img src="/assets/icons/chevron-left.svg" alt="" aria-hidden="true" />
+        <img
+          src={`${process.env.PUBLIC_URL}/assets/icons/chevron-left.svg`}
+          alt=""
+          aria-hidden="true"
+        />
       </button>
       <button
         className="nav-button play"
@@ -48,7 +52,9 @@ const Controls = ({
         aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
       >
         <img
-          src={isPlaying ? "/assets/icons/pause.svg" : "/assets/icons/play.svg"}
+          src={`${process.env.PUBLIC_URL}/assets/icons/${
+            isPlaying ? "pause" : "play"
+          }.svg`}
           alt=""
           aria-hidden="true"
         />
@@ -60,7 +66,7 @@ const Controls = ({
         aria-label="Next page"
       >
         <img
-          src="/assets/icons/chevron-left.svg"
+          src={`${process.env.PUBLIC_URL}/assets/icons/chevron-left.svg`}
           alt=""
           aria-hidden="true"
           className="rotate-180"

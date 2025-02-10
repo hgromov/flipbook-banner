@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/flipbook-banner/static/css/main.e5b72730.css",
-    "main.js": "/flipbook-banner/static/js/main.2efd227b.js",
+    "main.css": "/flipbook-banner/static/css/main.a4349d0b.css",
+    "main.js": "/flipbook-banner/static/js/main.062d1adf.js",
     "static/media/Grapiso.otf": "/flipbook-banner/static/media/Grapiso.1c6fd970be10f007a3b2.otf",
     "static/media/page-flip-3.mp3": "/flipbook-banner/static/media/page-flip-3.454fa11a863e30f20e1a.mp3",
     "static/media/page-flip-2.mp3": "/flipbook-banner/static/media/page-flip-2.00c24d6d26375bbe3fc2.mp3",
     "static/media/page-flip-1.mp3": "/flipbook-banner/static/media/page-flip-1.35bca9c7e462379850e0.mp3",
     "index.html": "/flipbook-banner/index.html",
-    "main.e5b72730.css.map": "/flipbook-banner/static/css/main.e5b72730.css.map",
-    "main.2efd227b.js.map": "/flipbook-banner/static/js/main.2efd227b.js.map"
+    "main.a4349d0b.css.map": "/flipbook-banner/static/css/main.a4349d0b.css.map",
+    "main.062d1adf.js.map": "/flipbook-banner/static/js/main.062d1adf.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5b72730.css",
-    "static/js/main.2efd227b.js"
+    "static/css/main.a4349d0b.css",
+    "static/js/main.062d1adf.js"
   ]
 }

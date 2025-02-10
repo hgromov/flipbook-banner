@@ -14,7 +14,6 @@ import { usePageTurnSound } from "../hooks/usePageTurnSound";
  * @param {number} props.zIndex - z-index value for page stacking
  * @param {boolean} props.visibility - Whether page should be visible
  * @param {Object} props.prevPage - Previous page data (if exists)
- * @param {boolean} props.current - Whether this is the current active page
  * @param {number} props.total - Total number of pages in the flipbook
  */
 const Page = ({
@@ -24,7 +23,6 @@ const Page = ({
   transform,
   zIndex,
   visibility,
-  current,
   total,
 }) => {
   const previousSelectedRef = useRef(selected);
@@ -56,8 +54,6 @@ const Page = ({
         <img src={page.image} alt={page.title} />
         <h2 id={`page-title-${index}`}>{page.title}</h2>
       </div>
-      <div className="page-back" aria-hidden="true" />
-      <div className="page-side" aria-hidden="true" />
     </div>
   );
 };

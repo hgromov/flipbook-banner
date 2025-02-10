@@ -104,7 +104,6 @@ const FlipbookBanner = ({
                 selected
               )}
               prevPage={pages[index - 1]}
-              current={index === selected}
               total={pages.length}
             />
           ))}
